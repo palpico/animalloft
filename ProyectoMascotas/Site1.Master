@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ProyectoMascotas.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Droid+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="inland.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+	<title>Mascotas on-line</title>
+</head>
+
+<body>
+<div id="wrapper960" class="clearfix">
+	
+
+	<div id="header" class="clearfix shadow">
+		<div id="sitetitle" class="clearfix">
+			<h1><a href="Inicio.aspx">Mascotas</a></h1>
+		</div>
+
+		<div id="nav" class="clearfix">
+			<ul>
+				<li><a href="Inicio.aspx">Inicio</a></li>
+			<li><a href="TipoAnimal.aspx">Ingreso De Tipo De Animales</a></li>
+            <li><a href="Animal.aspx">Ingreso De Animales</a></li>
+            <li><a href="BusquedaAnimal.aspx">Busqueda Animales</a></li>
+            <li><a href="Registro.aspx">Registro de Clientes</a></li>
+             <li><a href="BuesquedaClientes.aspx">Busqueda Clientes</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="slider-wrapper">
+		<div id="slider" class="nivoSlider">
+			<img src="images/slider0.jpg" alt="" />
+			<img src="images/slider1.jpg" alt="" />
+			<img src="images/slider2.jpg" alt="" />
+			<img src="images/slider3.jpg" alt="" />
+			<img src="images/slider4.jpg" alt="" />
+		</div>
+	</div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+	</div>
+
+	<div id="footer" class="shadow">
+		<p>&copy; 2014 Your Mascotas on-line | <a href="http://andreasviklund.com/templates/inland/">Template design</a> by <a href="http://andreasviklund.com/">andreasviklund.com</a></p>
+	</div>
+
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $('#slider').nivoSlider();
+    });
+</script>
+</body>
+</html>
