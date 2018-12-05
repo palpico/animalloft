@@ -25,7 +25,7 @@ namespace ProyectoMascotas
             LblCodigo.Visible = false;
             TxtCodigo.Visible = false;
                 entidadUser.NombreAnimal = TxtNombre.Text;
-                entidadUser.SexoAnimal = TxtSexo.Text;
+                entidadUser.SexoAnimal = DropDGenero.Text;
                 entidadUser.DescripcionAnimal = TxtDescripcion.Text;
                 entidadUser.CatidadAnimal = Int32.Parse(TxtCantidad.Text);
                 entidadUser.CodigoTipoAnimal = Int32.Parse(DdlTipo.Text);
@@ -44,47 +44,46 @@ namespace ProyectoMascotas
         {
             fila = user.buscaActualiza(Int32.Parse(TxtCodigo.Text));
             TxtNombre.Text = fila["nombre"].ToString();
-            TxtSexo.Text = fila["sexo"].ToString();
+            DropDGenero.Text = fila["sexo"].ToString();
             TxtDescripcion.Text = fila["descripcion"].ToString();
             TxtCantidad.Text = fila["cantidad"].ToString();
             DdlTipo.Text = fila["codigoTipoAnimal"].ToString();
             LblMensaje.Text = "";
-            BtnActualizar.Visible = true;
             BtnIngreso.Visible = false;
         }
 
-        protected void BtnActualizar_Click(object sender, EventArgs e)
-        {
-            Boolean exito;
+        //protected void BtnActualizar_Click(object sender, EventArgs e)
+        //{
+        //    Boolean exito;
 
-            LblCodigo.Visible = false;
-            TxtCodigo.Visible = false;
-            entidadUser.NombreAnimal = TxtNombre.Text;
-            entidadUser.SexoAnimal = TxtSexo.Text;
-            entidadUser.DescripcionAnimal = TxtDescripcion.Text;
-            entidadUser.CatidadAnimal = Int32.Parse(TxtCantidad.Text);
-            entidadUser.CodigoTipoAnimal = Int32.Parse(DdlTipo.Text);
+        //    LblCodigo.Visible = false;
+        //    TxtCodigo.Visible = false;
+        //    entidadUser.NombreAnimal = TxtNombre.Text;
+        //    entidadUser.SexoAnimal = TxtSexo.Text;
+        //    entidadUser.DescripcionAnimal = TxtDescripcion.Text;
+        //    entidadUser.CatidadAnimal = Int32.Parse(TxtCantidad.Text);
+        //    entidadUser.CodigoTipoAnimal = Int32.Parse(DdlTipo.Text);
 
 
 
-            exito = user.actualizar(entidadUser);
+        //    exito = user.actualizar(entidadUser);
 
-            if (exito)
-            {
-                LblMensaje.Text = "Datos Actualizados";
-                GridView1.DataBind();
-                TxtCodigo.Text = "";
-                TxtNombre.Text = "";
-                TxtSexo.Text = "";
-                TxtCantidad.Text = "";
-                TxtDescripcion.Text = "";
-                                BtnIngreso.Visible = true;
-            }
+        //    if (exito)
+        //    {
+        //        LblMensaje.Text = "Datos Actualizados";
+        //        GridView1.DataBind();
+        //        TxtCodigo.Text = "";
+        //        TxtNombre.Text = "";
+        //        TxtSexo.Text = "";
+        //        TxtCantidad.Text = "";
+        //        TxtDescripcion.Text = "";
+        //                        BtnIngreso.Visible = true;
+        //    }
 
-            else
-                LblMensaje.Text = "Datos NO Actualizados";
-            BtnIngreso.Visible = true;
-        }
+        //    else
+        //        LblMensaje.Text = "Datos NO Actualizados";
+        //    BtnIngreso.Visible = true;
+        //}
 
         protected void BtnActivar_Click(object sender, EventArgs e)
         {
@@ -98,11 +97,9 @@ namespace ProyectoMascotas
         {
             TxtCodigo.Visible = false;
             LblCodigo.Visible = false;
-            BtnActualizar.Visible = false;
             BtnIngreso.Visible = true;
             TxtCodigo.Text = "";
             TxtNombre.Text = "";
-            TxtSexo.Text = "";
             TxtCantidad.Text = "";
             TxtDescripcion.Text = "";
 

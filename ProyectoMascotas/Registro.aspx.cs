@@ -34,54 +34,25 @@ namespace ProyectoMascotas
             TxtApellido.Text = "";
             TxtTelefono.Text = "";
             TxtDireccion.Text = "";
-            BtnActualizar.Visible = false;
+           
         }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-            fila = user.buscaActualiza(TxtCedula.Text);
-            TxtCedula.Text = fila["cedula"].ToString();
-            TxtNombre.Text = fila["nombre"].ToString();
-            TxtApellido.Text = fila["apellido"].ToString();
-            TxtTelefono.Text = fila["telefono"].ToString();
-            TxtDireccion.Text = fila["direccion"].ToString();
-            TxtCedula.Visible = true;
+            user.buscaActualiza(TxtCedula.Text);
             LblMensaje.Text = "";
-            BtnActualizar.Visible = true;
+            
             BtnIngreso.Visible = false;
         }
-
-        protected void BtnActualizar_Click(object sender, EventArgs e)
+        
+        protected void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            Boolean exito;
-
-            entidadUser.Cedula = TxtCedula.Text;
-            entidadUser.Nombre = TxtNombre.Text;
-            entidadUser.Apellido = TxtApellido.Text;
-            entidadUser.Telefono = TxtTelefono.Text;
-            entidadUser.Direccion = TxtDireccion.Text;
-
-
-
-
-            exito = user.actualizar(entidadUser);
-
-            if (exito)
-            {
-                LblMensaje.Text = "Datos Actualizados";
-                GridView1.DataBind();
-                TxtCedula.Text = "";
-                TxtNombre.Text = "";
-                TxtApellido.Text = "";
-                TxtTelefono.Text = "";
-                TxtDireccion.Text = "";
-                BtnIngreso.Visible = true;
-            }
-
-            else
-                LblMensaje.Text = "Datos NO Actualizados";
+            TxtCedula.Text = "";
+            TxtNombre.Text = "";
+            TxtApellido.Text = "";
+            TxtTelefono.Text = "";
+            TxtDireccion.Text = "";
             BtnIngreso.Visible = true;
         }
-
-         }
+    }
 }

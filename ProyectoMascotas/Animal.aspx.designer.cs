@@ -58,13 +58,13 @@ namespace ProyectoMascotas {
         protected global::System.Web.UI.WebControls.Button BtnIngreso;
         
         /// <summary>
-        /// Control TxtSexo.
+        /// Control DropDGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSexo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDGenero;
         
         /// <summary>
         /// Control BtnActivar.
@@ -76,24 +76,6 @@ namespace ProyectoMascotas {
         protected global::System.Web.UI.WebControls.Button BtnActivar;
         
         /// <summary>
-        /// Control TxtDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion;
-        
-        /// <summary>
-        /// Control BtnBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBuscar;
-        
-        /// <summary>
         /// Control TxtCantidad.
         /// </summary>
         /// <remarks>
@@ -103,22 +85,13 @@ namespace ProyectoMascotas {
         protected global::System.Web.UI.WebControls.TextBox TxtCantidad;
         
         /// <summary>
-        /// Control BtnActualizar.
+        /// Control BtnBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnActualizar;
-        
-        /// <summary>
-        /// Control BtnBorrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBorrar;
+        protected global::System.Web.UI.WebControls.Button BtnBuscar;
         
         /// <summary>
         /// Control DdlTipo.
@@ -137,6 +110,24 @@ namespace ProyectoMascotas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// Control BtnBorrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnBorrar;
+        
+        /// <summary>
+        /// Control TxtDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion;
         
         /// <summary>
         /// Control LblMensaje.

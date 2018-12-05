@@ -37,7 +37,6 @@
         }
         .style7
         {
-            width: 195px;
         }
         .style8
         {
@@ -98,21 +97,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style7">
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style7" colspan="3">
                             &nbsp;
-                        </td>
-                        <td>
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White"
-                                BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2"
-                                GridLines="Vertical">
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2" GridLines="Vertical" Width="853px">
                                 <AlternatingRowStyle BackColor="#DCDCDC" />
                                 <Columns>
-                                    <asp:BoundField DataField="CodigoAnimal" HeaderText="CodigoAnimal" SortExpression="CodigoAnimal" />
-                                    <asp:BoundField DataField="NombreAnimal" HeaderText="NombreAnimal" SortExpression="NombreAnimal" />
-                                    <asp:BoundField DataField="SexoAnimal" HeaderText="SexoAnimal" SortExpression="SexoAnimal" />
-                                    <asp:BoundField DataField="DescripcionAnimal" HeaderText="DescripcionAnimal" SortExpression="DescripcionAnimal" />
-                                    <asp:BoundField DataField="CatidadAnimal" HeaderText="CatidadAnimal" SortExpression="CatidadAnimal" />
-                                    <asp:BoundField DataField="CodigoTipoAnimal" HeaderText="CodigoTipoAnimal" SortExpression="CodigoTipoAnimal" />
+                                    <asp:CommandField ShowSelectButton="True" />
+                                    <asp:BoundField DataField="CodigoAnimal" HeaderText="Código" SortExpression="CodigoAnimal" />
+                                    <asp:BoundField DataField="NombreAnimal" HeaderText="Nombre/Raza" SortExpression="NombreAnimal" />
+                                    <asp:BoundField DataField="SexoAnimal" HeaderText="Sexo" SortExpression="SexoAnimal" />
+                                    <asp:BoundField DataField="DescripcionAnimal" HeaderText="Descripción" SortExpression="DescripcionAnimal" />
+                                    <asp:BoundField DataField="CatidadAnimal" HeaderText="Catidad" SortExpression="CatidadAnimal" />
                                 </Columns>
                                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -124,8 +123,6 @@
                                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                 <SortedDescendingHeaderStyle BackColor="#000065" />
                             </asp:GridView>
-                        </td>
-                        <td>
                             &nbsp;
                         </td>
                     </tr>

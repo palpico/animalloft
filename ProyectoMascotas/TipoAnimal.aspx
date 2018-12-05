@@ -8,7 +8,7 @@
                 <td style="width: 241px">
                     Nombre:</td>
                 <td style="width: 210px">
-                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="#0033CC" Width="195px"></asp:TextBox>
+                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="White" Width="195px"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LblMensaje" runat="server"></asp:Label>
@@ -17,7 +17,7 @@
             <tr>
                 <td style="width: 241px">
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosTipoAnimales">
+                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosTipoAnimales" DataObjectTypeName="CapaNegocios.ClsTipoAnimal" UpdateMethod="actualizar">
                     </asp:ObjectDataSource>
                 </td>
                 <td style="width: 210px">
@@ -34,9 +34,10 @@
                         CellPadding="3" DataSourceID="ObjectDataSource1" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
-                            <asp:BoundField DataField="CodigoTipoAnimal" HeaderText="CodigoTipoAnimal" 
-                                SortExpression="CodigoTipoAnimal" />
-                            <asp:BoundField DataField="NombreTipoAnimal" HeaderText="NombreTipoAnimal" 
+                            <asp:CommandField ShowEditButton="True" />
+                            <asp:BoundField DataField="CodigoTipoAnimal" HeaderText="Código Animal" 
+                                SortExpression="CodigoTipoAnimal" ReadOnly="True" />
+                            <asp:BoundField DataField="NombreTipoAnimal" HeaderText="Tipo Animal" 
                                 SortExpression="NombreTipoAnimal" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />

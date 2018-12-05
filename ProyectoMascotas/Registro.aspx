@@ -9,7 +9,7 @@
                 <td style="width: 68px">
                     Cédula:</td>
                 <td style="width: 272px; text-align: center;">
-                    <asp:TextBox ID="TxtCedula" runat="server" BackColor="#0033CC" Width="198px"></asp:TextBox>
+                    <asp:TextBox ID="TxtCedula" runat="server" BackColor="White" Width="198px"></asp:TextBox>
                 </td>
                 <td>
                     Busqueda por cédula</td>
@@ -18,7 +18,7 @@
                 <td style="width: 68px">
                     Nombre:</td>
                 <td style="width: 272px; text-align: center;">
-                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="#0033CC" Width="198px" 
+                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="White" Width="198px" 
                         style="text-align: center"></asp:TextBox>
                 </td>
                 <td>
@@ -30,7 +30,7 @@
                 <td style="width: 68px">
                     Apellido</td>
                 <td style="width: 272px; text-align: center;">
-                    <asp:TextBox ID="TxtApellido" runat="server" BackColor="#0033CC" Width="198px"></asp:TextBox>
+                    <asp:TextBox ID="TxtApellido" runat="server" BackColor="White" Width="198px"></asp:TextBox>
                 </td>
                 <td>
                     <asp:Label ID="LblMensaje" runat="server"></asp:Label>
@@ -40,7 +40,7 @@
                 <td style="width: 68px">
                     Teléfono:</td>
                 <td style="width: 272px; text-align: center;">
-                    <asp:TextBox ID="TxtTelefono" runat="server" BackColor="#0033CC" Width="197px"></asp:TextBox>
+                    <asp:TextBox ID="TxtTelefono" runat="server" BackColor="White" Width="197px"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -49,7 +49,7 @@
                 <td style="width: 68px">
                     Domicílio:</td>
                 <td style="width: 272px; text-align: center;">
-                    <asp:TextBox ID="TxtDireccion" runat="server" BackColor="#0033CC" Width="196px"></asp:TextBox>
+                    <asp:TextBox ID="TxtDireccion" runat="server" BackColor="White" Width="196px"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -61,8 +61,7 @@
                     <asp:Button ID="BtnIngreso" runat="server" style="text-align: center" 
                         Text="Ingresar" Width="114px" onclick="BtnIngreso_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="BtnActualizar" runat="server" onclick="BtnActualizar_Click" 
-                        Text="Actualizar" Visible="False" Width="114px" />
+                    <asp:Button ID="BtnLimpiar" runat="server" OnClick="BtnLimpiar_Click" Text="Limpiar" Width="108px" />
                 </td>
                 <td>
                     &nbsp;</td>
@@ -85,8 +84,9 @@
                         Width="869px">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
+                            <asp:CommandField ShowEditButton="True" />
                             <asp:BoundField DataField="Cedula" HeaderText="Cedula" 
-                                SortExpression="Cedula" />
+                                SortExpression="Cedula" ReadOnly="True" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
                                 SortExpression="Nombre" />
                             <asp:BoundField DataField="Apellido" HeaderText="Apellido" 
@@ -107,7 +107,10 @@
                         <SortedDescendingHeaderStyle BackColor="#000065" />
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosCliente">
+                        SelectMethod="buscaActualiza" TypeName="CapaDatos.ClsDatosCliente" DataObjectTypeName="CapaNegocios.ClsCliente" UpdateMethod="actualizar">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="TxtCedula" Name="cedula" PropertyName="Text" Type="String" />
+                        </SelectParameters>
                     </asp:ObjectDataSource>
                 </td>
                 <td>

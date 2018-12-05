@@ -9,7 +9,7 @@
                     <asp:Label ID="LblCodigo" runat="server" Text="Codigo:" Visible="False"></asp:Label>
                 </td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:TextBox ID="TxtCodigo" runat="server" BackColor="#0033CC" Visible="False"></asp:TextBox>
+                    <asp:TextBox ID="TxtCodigo" runat="server" BackColor="White" Visible="False"></asp:TextBox>
                 </td>
                 <td style="width: 429px; text-align: left;">
                     &nbsp;</td>
@@ -18,7 +18,7 @@
                 <td style="width: 109px; text-align: left;">
                     Nombre:</td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="#0033CC" Width="186px"></asp:TextBox>
+                    <asp:TextBox ID="TxtNombre" runat="server" BackColor="White" Width="186px"></asp:TextBox>
                 </td>
                 <td style="width: 429px; text-align: left;">
                     <asp:Button ID="BtnIngreso" runat="server" onclick="BtnIngreso_Click" 
@@ -29,7 +29,10 @@
                 <td style="width: 109px; text-align: left;">
                     Sexo:</td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:TextBox ID="TxtSexo" runat="server" BackColor="#0033CC" Width="39px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDGenero" runat="server">
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Femenino</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
                 <td style="width: 429px; text-align: left;">
                     <asp:Button ID="BtnActivar" runat="server" Height="25px" 
@@ -38,10 +41,9 @@
             </tr>
             <tr>
                 <td style="width: 109px; text-align: left;">
-                    Descripcion:</td>
+                    Cantidad:</td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:TextBox ID="TxtDescripcion" runat="server" BackColor="#0033CC" 
-                        Width="183px"></asp:TextBox>
+                    <asp:TextBox ID="TxtCantidad" runat="server" BackColor="White" Width="100px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td style="width: 429px; text-align: left;">
                     <asp:Button ID="BtnBuscar" runat="server" onclick="BtnBuscar_Click" 
@@ -50,20 +52,15 @@
             </tr>
             <tr>
                 <td style="width: 109px; text-align: left;">
-                    Cantidad:</td>
+                    Tipo:</td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:TextBox ID="TxtCantidad" runat="server" BackColor="#0033CC" Width="100px"></asp:TextBox>
+                    <asp:DropDownList ID="DdlTipo" runat="server" DataSourceID="ObjectDataSource1" 
+                        DataTextField="NombreTipoAnimal" DataValueField="CodigoTipoAnimal" Width="185px">
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosTipoAnimales">
+                    </asp:ObjectDataSource>
                 </td>
-                <td style="width: 429px; text-align: left;">
-                    <asp:Button ID="BtnActualizar" runat="server" onclick="BtnActualizar_Click" 
-                        Text="Actualizar" Visible="False" Width="114px" Height="25px" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 109px; text-align: left;">
-                    &nbsp;</td>
-                <td style="width: 233px; text-align: left;">
-                    &nbsp;</td>
                 <td style="width: 429px; text-align: left;">
                     <asp:Button ID="BtnBorrar" runat="server" Height="25px" 
                         onclick="BtnBorrar_Click" Text="Borrar" Width="114px" />
@@ -71,15 +68,19 @@
             </tr>
             <tr>
                 <td style="width: 109px; text-align: left;">
-                    Tipo:</td>
+                    Descripción</td>
                 <td style="width: 233px; text-align: left;">
-                    <asp:DropDownList ID="DdlTipo" runat="server" DataSourceID="ObjectDataSource1" 
-                        DataTextField="NombreTipoAnimal" DataValueField="CodigoTipoAnimal">
-                    </asp:DropDownList>
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosTipoAnimales">
-                    </asp:ObjectDataSource>
+                    <asp:TextBox ID="TxtDescripcion" runat="server" BackColor="White" 
+                        Width="357px" Height="63px" TextMode="MultiLine"></asp:TextBox>
                 </td>
+                <td style="width: 429px; text-align: left;">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width: 109px; text-align: left;">
+                    &nbsp;</td>
+                <td style="width: 233px; text-align: left;">
+                    &nbsp;</td>
                 <td style="width: 429px; text-align: left;">
                     <asp:Label ID="LblMensaje" runat="server"></asp:Label>
                 </td>
@@ -94,18 +95,19 @@
                         Width="830px" style="text-align: center">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
-                            <asp:BoundField DataField="CodigoAnimal" HeaderText="CodigoAnimal" 
-                                SortExpression="CodigoAnimal" />
-                            <asp:BoundField DataField="NombreAnimal" HeaderText="NombreAnimal" 
+                            <asp:CommandField ShowEditButton="True" />
+                            <asp:BoundField DataField="CodigoAnimal" HeaderText="Código Animal" 
+                                SortExpression="CodigoAnimal" ReadOnly="True" />
+                            <asp:BoundField DataField="NombreAnimal" HeaderText="Nombre" 
                                 SortExpression="NombreAnimal" />
-                            <asp:BoundField DataField="SexoAnimal" HeaderText="SexoAnimal" 
+                            <asp:BoundField DataField="SexoAnimal" HeaderText="Sexo" 
                                 SortExpression="SexoAnimal" />
-                            <asp:BoundField DataField="DescripcionAnimal" HeaderText="DescripcionAnimal" 
+                            <asp:BoundField DataField="DescripcionAnimal" HeaderText="Descripción" 
                                 SortExpression="DescripcionAnimal" />
-                            <asp:BoundField DataField="CatidadAnimal" HeaderText="CatidadAnimal" 
+                            <asp:BoundField DataField="CatidadAnimal" HeaderText="Catidad" 
                                 SortExpression="CatidadAnimal" />
-                            <asp:BoundField DataField="CodigoTipoAnimal" HeaderText="CodigoTipoAnimal" 
-                                SortExpression="CodigoTipoAnimal" />
+                            <asp:BoundField DataField="CodigoTipoAnimal" HeaderText="Tipo Animal" 
+                                SortExpression="CodigoTipoAnimal" ReadOnly="True" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                         <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -118,7 +120,7 @@
                         <SortedDescendingHeaderStyle BackColor="#000065" />
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
-                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosAnimal">
+                        SelectMethod="listarTodo" TypeName="CapaDatos.ClsDatosAnimal" DataObjectTypeName="CapaNegocios.ClsAnimal" UpdateMethod="actualizar">
                     </asp:ObjectDataSource>
                 </td>
             </tr>

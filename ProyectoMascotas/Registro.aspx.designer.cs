@@ -94,13 +94,13 @@ namespace ProyectoMascotas {
         protected global::System.Web.UI.WebControls.Button BtnIngreso;
         
         /// <summary>
-        /// Control BtnActualizar.
+        /// Control BtnLimpiar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnActualizar;
+        protected global::System.Web.UI.WebControls.Button BtnLimpiar;
         
         /// <summary>
         /// Control GridView1.
